@@ -19,6 +19,32 @@
     <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="preload" as="style"
         onload="this.onload=null;this.rel='stylesheet'">
 
+
+    <link href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css" rel="preload" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <!-- The loading of KaTeX is deferred to speed up page rendering -->
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.18/dist/katex.min.js"
+        integrity="sha384-v6mkHYHfY/4BWq54f7lQAdtIsoZZIByznQ3ZqN38OL4KCsrxo31SLlPiak7cj/Mg"
+        crossorigin="anonymous"></script>
+    <script type="module">
+        // Dynamically load the KaTeX library only when needed
+        (async () => {
+            if (document.body.querySelector('[data-katex]')) { // Check if there are math elements to render
+                const {default: renderMathInElement} = await import("https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.mjs");
+                renderMathInElement(document.body, {
+                    delimiters: [
+                        {left: "\\(", right: "\\)", display: false},
+                        {left: "\\[", right: "\\]", display: true},
+                    ],
+                });
+            }
+        })();
+    </script>
+    <style>
+        .katex {
+            font-size: 1em;
+        }
+    </style>
 </head>
 
 <body>

@@ -7,7 +7,7 @@ const NotebookPaper = ({ children }: { children: ComponentChildren }) => {
         [],
     );
     const LINE_HEIGHT = 32; // Height of each line in pixels
-    const HOLES_EVERY_N_LINES = 3; // Add holes every 2 lines
+    const HOLES_EVERY_N_LINES = 2; // Add holes every 2 lines
 
     useEffect(() => {
         const calculatePunchHoles = () => {
@@ -48,7 +48,7 @@ const NotebookPaper = ({ children }: { children: ComponentChildren }) => {
     }, [LINE_HEIGHT, HOLES_EVERY_N_LINES]);
     return (
         <div className="relative w-full max-w-2xl mx-auto overflow-y-hidden">
-            <div className="relative top-3 bottom-4 bg-white my-6 mt-12 rounded border shadow">
+            <div className="relative bg-white my-6 mt-12 rounded border shadow">
                 {/* Red margin line */}
                 <div className="absolute left-10 md:left-16 top-0 bottom-0 w-px bg-red-300" />
 

@@ -15,11 +15,14 @@ type MDXComponentsType = {
 
 const MDXComponents: MDXComponentsType = {
     h1: (props: HeadingProps) => (
-        <h1 className="font-medium mb-0 fade-in" {...props} />
+        <h1
+            className="font-medium text-xl mb-3 text-blue-600 fade-in"
+            {...props}
+        />
     ),
     h2: (props: HeadingProps) => (
         <h2
-            className="mt-3 font-medium text-xl mb-3 text-blue-600"
+            className="mt-3 font-medium underline underline-offset-4 text-lg mb-3 "
             {...props}
         />
     ),
